@@ -1,9 +1,8 @@
-
 # README: Lung Cancer Single-Cell Transcriptomics Analysis
 
 ## **Overview**
 
-This project analyzes single-cell RNA sequencing (scRNA-Seq) data from lung cancer samples to uncover insights into cellular heterogeneity, differential gene expression, and pathway activities within the tumor microenvironment. The pipeline is implemented in R using the Seurat package and focuses on real-world datasets to address critical research questions in lung cancer biology.
+This project analyzes single-cell RNA sequencing (scRNA-Seq) data from lung cancer samples, specifically using the **GSE131907** dataset obtained from the Gene Expression Omnibus (GEO). The goal of this analysis is to gain insights into the cellular composition, differential gene expression, and pathway activities within the tumor microenvironment. The pipeline is implemented in R using the Seurat package and focuses on real-world datasets to address critical research questions in lung cancer biology.
 
 ---
 
@@ -32,12 +31,12 @@ This project analyzes single-cell RNA sequencing (scRNA-Seq) data from lung canc
 - Matrix
 
 ### **Data Source**
-The project utilizes publicly available scRNA-Seq datasets from the Gene Expression Omnibus (GEO). Replace `GSEXXXXXX` in the script with the actual dataset accession number.
+The project utilizes the **GSE131907** scRNA-Seq dataset from GEO. This dataset can be accessed at the [GEO website](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE131907). Download and set the path to the data in the script.
 
 ---
 
 ## **Pipeline Overview**
-1. **Data Acquisition**: Download scRNA-Seq data using the GEO accession ID.
+1. **Data Acquisition**: Download scRNA-Seq data from the GEO database (GSE131907).
 2. **Preprocessing**: Perform quality control, normalization, and filtering.
 3. **Clustering and Annotation**: Cluster cells and annotate cell types using known markers.
 4. **Differential Expression Analysis**: Identify DEGs between tumor and normal tissues.
@@ -51,29 +50,3 @@ The project utilizes publicly available scRNA-Seq datasets from the Gene Express
    ```bash
    git clone https://github.com/username/lung_cancer_scrna_analysis.git
    cd lung_cancer_scrna_analysis
-   ```
-2. Install the required R libraries:
-   ```r
-   install.packages(c("Seurat", "dplyr", "ggplot2", "clusterProfiler"))
-   ```
-3. Update the script with the GEO dataset ID and the appropriate download path.
-4. Run the R script to execute the analysis.
-
----
-
-## **Output**
-- **Plots**: UMAP plots, DEG heatmaps, and pathway barplots.
-- **CSV Files**: DEG results saved as `DEGs_lung_cancer.csv`.
-- **RDS File**: Processed Seurat object saved as `lung_cancer_scRNA.rds`.
-
----
-
-## **Contributing**
-Contributions are welcome! If you have suggestions for improving the pipeline or adding new features, please create a pull request or open an issue.
-
----
-
-## **License**
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
